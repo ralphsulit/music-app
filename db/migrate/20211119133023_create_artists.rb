@@ -8,7 +8,7 @@ class CreateArtists < ActiveRecord::Migration[6.1]
         t.text :avatar_url
         t.text :cover_photo_url
 
-        t.boolean :verified 
+        t.boolean :verified, default: false
         t.datetime :verified_at
 
         t.datetime :formed_at

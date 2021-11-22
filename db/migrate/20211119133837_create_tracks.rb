@@ -6,7 +6,7 @@ class CreateTracks < ActiveRecord::Migration[6.1]
       t.text :url 
       t.text :credits
 
-      t.boolean :available
+      t.boolean :available, default: false
 
       t.timestamps
     end
