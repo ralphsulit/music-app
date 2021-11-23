@@ -3,7 +3,11 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  def show
+  end
+
   def new 
+    @artist = Artist.new
   end
 
   def create 
@@ -40,7 +44,7 @@ class ArtistsController < ApplicationController
 
   private 
   
-  def article_params 
+  def artist_params 
     params.require(:artist).permit(:name, :bio, :cover_photo_url)
   end
 

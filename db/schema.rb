@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2021_11_19_133852) do
 
   create_table "albums", force: :cascade do |t|
     t.string "name"
-    t.string "kind"
+    t.text "kind"
     t.text "cover_art_url"
-    t.boolean "released"
+    t.boolean "released", default: false
     t.datetime "released_at"
     t.time "length"
     t.datetime "created_at", precision: 6, null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_11_19_133852) do
     t.string "name"
     t.text "url"
     t.text "credits"
-    t.boolean "available"
+    t.boolean "available", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

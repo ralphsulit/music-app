@@ -1,0 +1,45 @@
+<h1>
+Albums
+</h1>
+
+<%= stylesheet_link_tag 'albums.css' %>
+
+<table>
+  <thead>
+    <tr>
+      <th> ID </th>
+      <th> Name </th>
+      <th> Genre </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td> <%= album.id %> </td>
+        <td> <%= album.name %> </td>
+        <td> <%= album.kind %> </td>
+
+        <td>
+          <%= link_to edit_album_path(album.id) do %>
+            Edit
+          <% end %>
+
+          <%= link_to album_path(album.id), method: :delete do %>
+            Delete
+          <% end %>
+        </td>
+
+        <td>
+          <%=  link_to tracks_path do %>
+            Tracks
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Album', new_album_path %>
+</br>
+<%= link_to 'Artist', artists_path %>

@@ -1,0 +1,15 @@
+<h1>
+  Edit New Track
+</h1>
+
+<%= form_with model: @track do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </br>
+  <%= f.radio_button :available, true %>
+  <%= f.label :yes %>
+  <%= f.radio_button :available, false %>
+  <%= f.label :no %>
+  </br>
+  <%= f.submit %>
+<% end %>

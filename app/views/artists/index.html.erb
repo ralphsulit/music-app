@@ -1,40 +1,42 @@
-<h1>
-  Artists
-</h1>
+<%= stylesheet_link_tag "artists.css" %>
+<div class='header'>
+  <h1>
+    Artists
+  </h1>
+  <%= link_to 'New Artist', new_artist_path%>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th> ID </th>
-      <th> Name </th>
-      <th> Bio </th>
-      <th> Permalink </th>
-      <th> Avatar Url </th>
-      <th> Cover Photo </th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @artists.each do |artist| %>
+<div class='container'> 
+  <table>
+    <thead class='thead'>
       <tr>
-        <td> <%= artist.id %> </td>
-        <td> <%= artist.name %> </td>
-        <td> <%= artist.bio %> </td>
-        <td> <%= artist.permalink %> </td>
-        <td> <%= artist.avatar_url %> </td>
-        <td> <%= artist.cover_photo_url %> </td>
-        <td> 
-          <%= link_to edit_artist_path(artist.id) do %>
-            Edit
-          <% end %>
+        <th> # </th>
+        <th> Name </th>
+        <th> Genre </th>
+      </tr> 
+    </thead>
+    <tbody>
+      <% @artists.each do |artist| %>
+        <tr >
+          <td> <%= artist.id %> </td>
+          <td> <%= artist.name %> </td>
+          <td> <%= artist.bio %> </td>
+          <td class='td'> 
+            <%= link_to album_path(artist.id) do %>
+              Albums
+            <% end %>
 
-          <%= link_to artist_path(artist.id), method: :delete do %>
-            Delete
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <%= link_to edit_artist_path(artist.id) do %>
+              Edit
+            <% end %>
 
-<%= link_to 'New Artist', new_artist_path%>
+            <%= link_to artist_path(artist.id), :class =>  'close', method: :delete do %>
+              X
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
