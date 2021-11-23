@@ -16,7 +16,9 @@
           X
         <% end %>
       </div>
-      <div class='avatar'></div>
+      <div>
+        <%= image_tag artist.avatar, :class => 'avatar' %>
+      </div>
       <div class='card-bottom'>
         <%= artist.name %>
         <%= link_to edit_artist_path(artist.id) do %>

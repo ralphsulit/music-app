@@ -5,7 +5,7 @@
 }
 
 body {
-  /* background-image: linear-gradient(#59462D, #121212); */
+  background-image: linear-gradient(#A7B3B9, #121212);
   background-color: #070707;
   font-size: 18px;
   height: 100vh;
@@ -27,7 +27,7 @@ a {
 .header {
   height: 40vh;
   width: 100%;
-  padding: 100px 50px;
+  padding: 100px 200px;
 }
 
 
@@ -55,9 +55,16 @@ a {
   color: #B3B3B3;
 }
 
+.avatar {
+  width: 140px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
 .card-bottom {
   position: relative;
-  top: 170px;
+  top: 25px;
   display: flex;
   justify-content: space-between;
   padding: 2px 10px;
