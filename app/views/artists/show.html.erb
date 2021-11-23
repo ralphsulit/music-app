@@ -1,1 +1,39 @@
-<h1> Artist </h1>
+<%= stylesheet_link_tag "show-artist.css" %>
+<div class='header'>
+  <span>
+    <%= link_to '<', artists_path, :class => 'back' %>
+  </span>
+</div>
+
+<div class='show-container'>
+  <span><%= @artist.verified ? 'Verified Artist' : "Not Verified" %> <span> 
+  <div class='artist-info'>
+    <img><%=image_tag @artist.avatar %> </img>
+    <h1><%= @artist.name %></h1>
+    <p><%= @artist.bio %> </p>
+  </div>
+</div>
+
+<div class='album-header'>
+  <span class='button'><%= link_to 'Albums', @album %></span>
+</div>
+<div class='card-container'>
+  <% @albums.each do |album| %>
+    <div class='card'>
+      <div class='card-top'>
+        <%= link_to album_path(album.id), :class =>  'close', method: :delete do %>
+          X
+        <% end %>
+      </div>
+      <div>
+      <%= image_tag album.avatar, :class => 'avatar' %>
+      </div>
+      <div class='card-bottom'>
+        <%= album.name %>
+        <%= link_to edit_album_path(album.id) do %>
+          Edit
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

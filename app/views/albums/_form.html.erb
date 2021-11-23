@@ -1,0 +1,26 @@
+<div class='container'>
+  <%= form_with model: @album do |f| %>
+    <%= f.text_field :name, :placeholder => 'Album Name', class: 'text-field' %>
+    </br>
+    <%= f.label 'Kind' %> </br>
+    <%= 
+      f.select :kind, 
+      [
+        ['-Select Genre-', 1], 
+        ['Single'], 
+        ['LP'], 
+        ['EP']
+      ], 
+      selected: '1' 
+    %>
+    </br>
+    <div class='cover-photo'>
+      <%= f.label 'Cover Photo' %> 
+      <%= f.file_field :avatar, accept: 'image/*' %> 
+    </div>
+    </br>
+    <div>
+      <%= f.submit class: 'submit-btn' %>
+    </div>
+  <% end %>
+</div>

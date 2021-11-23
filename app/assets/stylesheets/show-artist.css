@@ -1,0 +1,122 @@
+body {
+  background-image: linear-gradient(#361711, #121212);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.album-header{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 180px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.header {
+  padding: 50px 200px;
+  height: 10vh;
+  margin-bottom: 20px;
+}
+
+.artist-info {
+  margin-top: 20px;
+}
+
+.show-container,
+.content {
+  margin-left: 200px;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+.albums {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 50px;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+  text-align: left;
+}
+
+li {
+  display: flex;
+}
+
+.album-id {
+  margin-right: 100px;
+}
+
+.album-name {
+  width: 150px;
+  margin-right: 200px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.card {
+  height: 280px;
+  width: 220px;
+  background-color: #282828;
+  border-radius: 5px;
+  margin: 50px 20px;
+  padding: 20px 10px;
+  font-size: 1.2rem;
+}
+
+.albums {
+  color: #B3B3B3;
+}
+
+.avatar {
+  width: 140px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.card-bottom {
+  position: relative;
+  top: 35px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 10px;
+  font-size: 1rem;
+}
+
+.close {
+  position: relative;
+  right: -70px;
+  bottom: 10px;
+  color: #B3B3B3;
+  border-radius: 50%;
+  border: 1px solid #B3B3B3;
+  padding: 3px 6px;
+  font-size: 0.8rem;
+  margin-left: 16px;
+}
+

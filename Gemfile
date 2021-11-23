@@ -58,3 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'image_processing'
 gem 'mini_magick'
+gem 'world-flags', github: 'kristianmandrup/world-flags', branch: 'master'

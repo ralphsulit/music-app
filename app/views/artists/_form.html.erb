@@ -1,0 +1,27 @@
+<div class='container'>
+  <%= form_with model: @artist do |f| %>
+    <%= f.text_field :name, :placeholder => 'Name', class: 'text-field' %>
+    </br>
+    <%= f.text_area :bio, :placeholder => 'Bio', class: 'text-area' %>
+    </br>
+    <div class='photos-container'>
+      <div class='avatar-text'>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar, accept: 'image/*'  %>
+      </div>
+      <div class='cover-photo'>
+        <%= f.label :cover_photo_url %> 
+        <%= f.file_field :cover_photo_url, accept: 'image/*' %> 
+      </div>
+    </div>
+    </br>
+    <%= f.label :verified %> </br>
+    <%= f.radio_button :verified, true %>
+    <%= f.label :yes %>
+    <%= f.radio_button :verified, false %>
+    <%= f.label :no %> </br>
+    <div>
+      <%= f.submit class: 'submit-btn' %>
+    </div>
+  <% end %>
+</div>

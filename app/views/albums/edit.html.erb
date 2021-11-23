@@ -1,25 +1,13 @@
-<h1>
-  Edit album
-</h1>
+<%= stylesheet_link_tag 'new-album.css' %>
 
-<%= form_with model: @album do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  </br>
-  <%= f.label 'Genre' %>
-  <%= 
-    f.select :kind, 
-    [['-Select Genre-', 1], 
-    ['Country'], 
-    ['Pop'], 
-    ['Rock'], 
-    ['Hip hop'], 
-    ['Reggae'], 
-    ['Jazz'], 
-    ['Soul']], 
-    selected: '1' 
-  %>
-  </br>
-  <%= f.submit %>
-<% end %>
+<div class='header'>
+  <span>
+    <%= link_to '<', artists_path, :class => 'back' %>
+  </span>
+  <h1>
+    Edit Album
+  </h1>
+</div>
+
+<%= render 'form' %>
 

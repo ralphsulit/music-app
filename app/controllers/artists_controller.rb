@@ -1,13 +1,21 @@
 class ArtistsController < ApplicationController
+  before_action :set_artist, only: [:edit, :update, :destroy, :show]
+
   def index
     @artists = Artist.all
   end
 
   def show
+    @albums = Album.all
+    @album = Album.new
   end
 
   def new 
     @artist = Artist.new
+  end
+
+  def set_artist
+    @artist = Artist.find(params[:id])
   end
 
   def create 

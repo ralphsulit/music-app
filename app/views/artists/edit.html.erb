@@ -1,14 +1,11 @@
-<h1>
-  Edit New Artist
-</h1>
+<%= stylesheet_link_tag "new-artist.css" %>
+<div class='header'>
+  <span>
+    <%= link_to '<', artists_path, :class => 'back' %>
+  </span>
+  <h1>
+    Edit Artist
+  </h1>
+</div>
 
-
-<%= form_with model: @artist do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  </br>
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
-  </br>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>

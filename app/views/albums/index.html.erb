@@ -1,45 +1,33 @@
-<h1>
-Albums
-</h1>
+<%= stylesheet_link_tag "artists.css" %>
+<%= stylesheet_link_tag "albums.css" %>
+<div class='header'>
+  <span>
+    <%= link_to '<', artists_path, :class => 'back' %>
+  </span>
+  <h1>
+    Albums
+  </h1>
+  <%= link_to 'Add New Album', new_album_path, :class => 'add' %>
+</div>
 
-<%= stylesheet_link_tag 'albums.css' %>
 
-<table>
-  <thead>
-    <tr>
-      <th> ID </th>
-      <th> Name </th>
-      <th> Genre </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td> <%= album.id %> </td>
-        <td> <%= album.name %> </td>
-        <td> <%= album.kind %> </td>
-
-        <td>
-          <%= link_to edit_album_path(album.id) do %>
-            Edit
-          <% end %>
-
-          <%= link_to album_path(album.id), method: :delete do %>
-            Delete
-          <% end %>
-        </td>
-
-        <td>
-          <%=  link_to tracks_path do %>
-            Tracks
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Album', new_album_path %>
-</br>
-<%= link_to 'Artist', artists_path %>
+<div class='card-container'>
+<% @albums.each do |album| %>
+  <div class='card'>
+    <div class='card-top'>
+      <%= link_to album_path(album.id), :class =>  'close', method: :delete do %>
+        X
+      <% end %>
+    </div>
+    <div>
+    <%= image_tag album.avatar, :class => 'avatar' %>
+    </div>
+    <div class='card-bottom'>
+      <%= link_to album.name, album_path(album.id) %>
+      <%= link_to edit_album_path(album.id) do %>
+        Edit
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
