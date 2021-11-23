@@ -1,14 +1,37 @@
-<h1>
-  Add New Artist
-</h1>
+<%= stylesheet_link_tag "new-artist.css" %>
+<div class='header'>
+  <span>
+    <%= link_to '<', artists_path, :class => 'back' %>
+  </span>
+  <h1>
+    Add New Artist
+  </h1>
+</div>
 
-
-<%= form_with model: @artist do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  </br>
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
-  </br>
-  <%= f.submit %>
-<% end %>
+<div class='container'>
+  <%= form_with model: @artist do |f| %>
+    <%= f.text_field :name, :placeholder => 'Name', class: 'text-field' %>
+    </br>
+    <%= f.text_area :bio, :placeholder => 'Bio', class: 'text-area' %>
+    </br>
+    <div class='photos-container'>
+      <div class='avatar'>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+      </div>
+      <div class='cover-photo'>
+        <%= f.label :cover_photo_url %> 
+        <%= f.file_field :cover_photo_url %> 
+      </div>
+    </div>
+    </br>
+    <%= f.label :verified %> </br>
+    <%= f.radio_button :verified, true %>
+    <%= f.label :yes %>
+    <%= f.radio_button :verified, false %>
+    <%= f.label :no %> </br>
+    <div>
+      <%= f.submit class: 'submit-btn' %>
+    </div>
+  <% end %>
+</div>

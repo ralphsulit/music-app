@@ -5,9 +5,11 @@
 }
 
 body {
-  background-image: linear-gradient(#59462D, #121212);
+  /* background-image: linear-gradient(#59462D, #121212); */
+  background-color: #070707;
   font-size: 18px;
   height: 100vh;
+  width: 100vw;
   text-decoration: none;
   color: #fff;
 }
@@ -17,55 +19,58 @@ h1 {
   font-weight: 900;
 }
 
-.header {
-  height: 30vh;
-  padding: 100px 50px;
-}
-
 a {
   color: #fff;
   text-decoration: none;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 70vh;
+.header {
+  height: 40vh;
   width: 100%;
+  padding: 100px 50px;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 200;
-  padding: 20px 50px;
 }
 
-.border {
-  border-bottom: 1px solid #B3B3B3;
+.card {
+  height: 250px;
+  width: 200px;
+  background-color: #282828;
+  border-radius: 5px;
+  margin: 50px 20px;
+  padding: 20px 10px;
+  font-size: 1.2rem;
 }
 
-.thead {
-  color: #A7A7A6;
-  padding-bottom: 100px;
+.artist {
+  color: #B3B3B3;
+}
+
+.card-bottom {
+  position: relative;
+  top: 170px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 10px;
 }
 
 .close { 
-  color: #F13738;
+  position: relative;
+  right: -65px;
+  bottom: 10px;
+  color: #B3B3B3;
   border-radius: 50%;
-  border: 1px solid #F13738;
-  padding: 3px 7px;
+  border: 1px solid #B3B3B3;
+  padding: 3px 6px;
   font-size: 0.8rem;
   margin-left: 16px;
 }
-
-thead {
-  padding-bottom: 10px;
-}
-
-
-td a {
-  color: #A7A7A6;
-  padding: 0 5px;
-  font-size: 1rem;
-}
-
-
