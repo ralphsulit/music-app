@@ -1,37 +1,42 @@
-<h1>
-  Tracks 
-</h1>
+<%= stylesheet_link_tag "tracks.css" %>
 
-<table>
-  <thead>
-    <tr>
-      <th> ID </th>
-      <th> Name </th>
-      <th> Availability </th>
-    </tr>
-  </thead>
+<div class='header'>
+  <span>
+    <%= link_to '<', albums_path, :class => 'back' %>
+  </span>
+</div>
 
-  <tbody>
-    <% @tracks.each do |track| %>
-      <tr>
-        <td> <%= track.id %> </td>
-        <td> <%= track.name %> </td>
-        <td> <%= track.url %> </td>
-        <td> <%= track.credits %> </td>
-        <td> <%= track.available %> </td>
+<div class='track-header'>
+  <span><%= link_to 'Tracks', @track %></span>
+  <div class='add-track'>
+    <%= link_to "+", new_track_path %>
+  </div>
+</div>
 
-        <td> 
-          <%= link_to edit_track_path(track.id) do %>
-            Edit
-          <% end %>
+<div class='artist-header'>
+  <ul>
+    <li>#</li>
+    <li class='title'>Title</li>
+    <li>Availability</li>
+  </ul>
+</div>
 
-          <%= link_to track_path(track.id), method: :delete do %>
+<div class='artist-list'>
+  <% @tracks.each do |track| %>
+    <ul>
+      <li class='list-id'><%= track.id %></li>
+      <li class='list-title'><%= track.name %></li>
+      <li class='list-available'><%= track.available %></li>
+      <li>
+        <%= link_to edit_track_path(track.id) do %>
+          Edit
+        <% end %>
+      </li>
+      <li>
+        <%= link_to track_path(track.id), method: :delete do %>
             Delete
           <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "Add New Track", new_track_path %>
-<%= link_to "Album", albums_path %>
+      </li>
+    </ul>
+  <% end %>
+</div>

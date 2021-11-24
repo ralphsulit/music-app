@@ -1,0 +1,13 @@
+<div class='container'>
+  <%= form_with model: @track do |f| %>
+    <%= f.text_field :name, :placeholder => 'Track Name', class: 'text-field' %>
+    </br>
+    <%= f.label 'Availabilty' %> </br>
+    <%= radio_button_tag(:available, true) %>
+    <%= label_tag(:yes) %>
+    <%= radio_button_tag(:available, false) %>
+    <%= label_tag(:no) %>
+    <%= f.submit class: 'submit-btn' %>
+    </div>
+  <% end %>
+</div>

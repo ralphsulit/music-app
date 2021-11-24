@@ -1,15 +1,11 @@
-<h1>
-  Edit New Track
-</h1>
+<%= stylesheet_link_tag "new-artist.css" %>
+<div class='header'>
+  <span>
+    <%= link_to '<', tracks_path, :class => 'back' %>
+  </span>
+  <h1>
+    Edit Track
+  </h1>
+</div>
 
-<%= form_with model: @track do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  </br>
-  <%= f.radio_button :available, true %>
-  <%= f.label :yes %>
-  <%= f.radio_button :available, false %>
-  <%= f.label :no %>
-  </br>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>
