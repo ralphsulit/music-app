@@ -1,18 +1,22 @@
 <%= stylesheet_link_tag "show-artist.css" %>
-<div class='header'>
-  <span>
-    <%= link_to '<', artists_path, :class => 'back' %>
-  </span>
-</div>
 
-<div class='show-container'>
-  <span><%= @artist.verified ? 'Verified Artist' : "Not Verified" %> <span> 
-  <div class='artist-info'>
-    <img><%=image_tag @artist.avatar %> </img>
-    <h1><%= @artist.name %></h1>
-    <p><%= @artist.bio %> </p>
+<div class='wrapper'>
+<%= image_tag @artist.cover_photo_url, :class => 'cover_photo' %>
+<span>
+  <%= link_to '<', artists_path, :class => 'back' %>
+</span>
+
+  
+  <div class='show'>
+    <span><%= @artist.verified ? 'Verified Artist' : "Not Verified" %> <span> 
+    <div class='artist-info'>
+      <img><%=image_tag @artist.avatar %> </img>
+      <h1><%= @artist.name %></h1>
+      <p><%= @artist.bio %> </p>
+    </div>
   </div>
 </div>
+
 
 <div class='album-header'>
   <span class='button'><%= link_to 'Albums', @album %></span>

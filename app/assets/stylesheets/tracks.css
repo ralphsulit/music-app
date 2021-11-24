@@ -15,3 +15,7 @@ body {
   display: flex;
   font-size: 2rem;
 }
+
+.artist-info {
+  margin-left: 100px;
+}

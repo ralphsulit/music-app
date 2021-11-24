@@ -32,9 +32,38 @@ h1 {
   margin-top: 20px;
 }
 
-.show-container,
-.content {
+.wrapper {
+  position: relative;
+}
+
+.cover_photo {
+  width: 100%;
+  object-fit: cover;
+  height: 45vh;
+  opacity: 0.7;
+}
+
+.show {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 30px;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 120px;
+  margin-top: 10px;
+}
+
+.show,
+.content{
   margin-left: 200px;
+}
+
+.show span {
+  margin-left: 100px;
 }
 
 .content {

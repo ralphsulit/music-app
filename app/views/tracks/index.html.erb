@@ -6,37 +6,41 @@
   </span>
 </div>
 
+
+<div class='sample'>
 <div class='track-header'>
-  <span><%= link_to 'Tracks', @track %></span>
-  <div class='add-track'>
-    <%= link_to "+", new_track_path %>
+<span><%= link_to 'Tracks', @track %></span>
+    <div class='add-track'>
+      <%= link_to "+", new_track_path %>
+    </div>
+    </div>
+
+  <div class='artist-header'>
+    <ul>
+      <li>#</li>
+      <li class='title'>Title</li>
+      <li>Availability</li>
+    </ul>
+  </div>
+
+  <div class='artist-list'>
+    <% @tracks.each do |track| %>
+      <ul>
+        <li class='list-id'><%= track.id %></li>
+        <li class='list-title'><%= track.name %></li>
+        <li class='list-available'><%= track.available %></li>
+        <li>
+          <%= link_to edit_track_path(track.id) do %>
+            Edit
+          <% end %>
+        </li>
+        <li>
+          <%= link_to track_path(track.id), method: :delete do %>
+              Delete
+            <% end %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 </div>
 
-<div class='artist-header'>
-  <ul>
-    <li>#</li>
-    <li class='title'>Title</li>
-    <li>Availability</li>
-  </ul>
-</div>
-
-<div class='artist-list'>
-  <% @tracks.each do |track| %>
-    <ul>
-      <li class='list-id'><%= track.id %></li>
-      <li class='list-title'><%= track.name %></li>
-      <li class='list-available'><%= track.available %></li>
-      <li>
-        <%= link_to edit_track_path(track.id) do %>
-          Edit
-        <% end %>
-      </li>
-      <li>
-        <%= link_to track_path(track.id), method: :delete do %>
-            Delete
-          <% end %>
-      </li>
-    </ul>
-  <% end %>
-</div>
