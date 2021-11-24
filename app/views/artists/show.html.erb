@@ -20,19 +20,11 @@
 <div class='card-container'>
   <% @albums.each do |album| %>
     <div class='card'>
-      <div class='card-top'>
-        <%= link_to album_path(album.id), :class =>  'close', method: :delete do %>
-          X
-        <% end %>
-      </div>
       <div>
       <%= image_tag album.avatar, :class => 'avatar' %>
       </div>
       <div class='card-bottom'>
         <%= album.name %>
-        <%= link_to edit_album_path(album.id) do %>
-          Edit
-        <% end %>
       </div>
     </div>
   <% end %>

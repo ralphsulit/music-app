@@ -1,13 +1,21 @@
 class AlbumsController < ApplicationController
+  before_action :set_album, only: [:edit, :update, :destroy, :show]
+
   def index
     @albums = Album.all
   end
 
   def show
+    @tracks = Track.all
+    @track = Track.new
   end
 
   def new 
     @album = Album.new
+  end
+
+  def set_album
+    @album = Album.find(params[:id])
   end
 
   def create

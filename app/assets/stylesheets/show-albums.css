@@ -1,0 +1,40 @@
+body {
+  background-image: linear-gradient(#8AC555, #121212);
+}
+
+.artist-header {
+  padding: 20px 50px;
+  margin: 0 200px;
+  margin-bottom: 0;
+}
+
+.track-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 50px 0 0 250px;
+}
+
+.title {
+  margin: 0 220px 0 20px;
+}
+
+.artist-list {
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.artist-list ul li {
+  text-align: left;
+  padding: 10px 0 10px 0;
+}
+
+.list-title {
+  width: 120px;
+  margin: 0 150px 0 30px;
+}
+
+.list-available {
+  margin-right: 200px;
+}

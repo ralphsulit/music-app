@@ -1,1 +1,37 @@
-<h1> Album </h1>
+<%= stylesheet_link_tag "show-albums.css" %>
+
+<div class='header'>
+  <span>
+    <%= link_to '<', albums_path, :class => 'back' %>
+  </span>
+</div>
+
+<div class='show-container'>
+  <div class='artist-info'>
+    <img><%=image_tag @album.avatar %> </img>
+    <h1><%= @album.name %></h1>
+    <p><%= @album.kind %> </p>
+  </div>
+</div>
+
+<div class='track-header'>
+  <span><%= link_to 'Tracks', @track %></span>
+</div>
+
+<div class='artist-header'>
+  <ul>
+    <li>#</li>
+    <li class='title'>Title</li>
+    <li>Availability</li>
+  </ul>
+</div>
+
+<div class='artist-list'>
+  <% @tracks.each do |track| %>
+    <ul>
+      <li class='list-id'><%= track.id %></li>
+      <li class='list-title'><%= track.name %></li>
+      <li class='list-available'><%= track.available %></li>
+    </ul>
+  <% end %>
+</div>
